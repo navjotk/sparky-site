@@ -1,10 +1,126 @@
 <!doctype html>
 <html lang="en-GB">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sparky — Your AI homelab</title><link rel="stylesheet" href="/styles.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sparky is the private AI assistant that runs your entire home.">
+  <title>Sparky — The AI assistant that runs your entire home</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
 <body>
-<header><a class="brand" href="/"><img src="/assets/png/lockup-primary.png" alt="Sparky"></a></header>
-<main>
-<section class="hero"><p class="eyebrow">Your AI homelab</p><h1>A helpful computer<br>for your home.</h1><p class="lede">Sparky is a private, always-on AI assistant that lives in your home and helps you get things done.</p><button class="button" id="waitlist-toggle" type="button">Join the waitlist →</button><form class="waitlist-form" id="waitlist-form" hidden><label for="waitlist-email">Your email</label><div class="waitlist-row"><input id="waitlist-email" name="email" type="email" placeholder="you@example.com" required><button class="button" type="submit">Join →</button></div><p class="form-note">We’ll only use this to let you know when Sparky is available.</p></form></section>
-<section class="features"><article><img src="/assets/svg/spark-soft-orange.svg" alt=""><h2>Private by design</h2><p>Your assistant runs on your device, with your data under your control.</p></article><article><img src="/assets/svg/spark-soft-orange.svg" alt=""><h2>Ready to help</h2><p>Talk to Sparky from the apps you already use, whenever you need it.</p></article><article><img src="/assets/svg/spark-soft-orange.svg" alt=""><h2>Made for home</h2><p>A calm, capable computer that looks after the useful details.</p></article></section>
-</main><footer><span>⚡ Sparky</span><a href="/setup">Setup</a></footer>
-<script>const toggle=document.querySelector('#waitlist-toggle'),form=document.querySelector('#waitlist-form');toggle.addEventListener('click',()=>{toggle.hidden=true;form.hidden=false;form.querySelector('input').focus()});form.addEventListener('submit',async event=>{event.preventDefault();const email=new FormData(form).get('email');const submit=form.querySelector('button[type=submit]');submit.disabled=true;submit.textContent='Joining…';try{const response=await fetch('https://dashboard.sparky-box.com/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});if(!response.ok)throw new Error('signup failed');form.innerHTML='<p class="form-note">You’re on the list — we’ll be in touch.</p>'}catch(error){submit.disabled=false;submit.textContent='Join →';form.insertAdjacentHTML('beforeend','<p class="form-note">Something went wrong. Please try again.</p>')}});</script></body></html>
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/assets/png/lockup-primary.png" alt="Sparky"></a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Your home, with a brain</p>
+      <h1>The AI assistant that runs your entire home.</h1>
+      <p class="hero-copy">Sparky helps you remember, plan, find, watch, control, and organise — through one private assistant that lives in your home.</p>
+      <button class="button" id="waitlist-toggle" type="button">Join the waitlist <span aria-hidden="true">→</span></button>
+      <form class="waitlist-form" id="waitlist-form" hidden>
+        <label for="waitlist-email">Your email</label>
+        <div class="waitlist-row">
+          <input id="waitlist-email" name="email" type="email" placeholder="you@example.com" required>
+          <button class="button" type="submit">Join <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="form-note">We’ll only use this to let you know when Sparky is available.</p>
+      </form>
+    </section>
+
+    <section class="intro wrap">
+      <p class="section-kicker">One assistant. Every part of home life.</p>
+      <p class="intro-copy">Sparky starts with a conversation. Then that conversation reaches into the things that matter: your plans, your memories, your meals, your entertainment, and the way your home works.</p>
+    </section>
+
+    <section class="story wrap" aria-label="A day with Sparky">
+      <article class="story-card story-card-wide">
+        <div class="story-time">In the morning</div>
+        <div>
+          <h2>“What do I need to know today?”</h2>
+          <p>Sparky brings together the plans, reminders, messages, and priorities that deserve your attention.</p>
+        </div>
+      </article>
+      <article class="story-card">
+        <div class="story-time">During the day</div>
+        <div>
+          <h2>“Remember this.”</h2>
+          <p>Send Sparky a thought, a link, a voice note, or a half-formed idea. Find it again when it matters.</p>
+        </div>
+      </article>
+      <article class="story-card">
+        <div class="story-time">At home</div>
+        <div>
+          <h2>“What should we cook this week?”</h2>
+          <p>Save recipes wherever you find them, make a meal plan, and turn it into one shopping list for the family.</p>
+        </div>
+      </article>
+      <article class="story-card story-card-wide story-card-dark">
+        <div class="story-time">When someone recommends a film</div>
+        <div>
+          <h2>“Add it to our library.”</h2>
+          <p>Build a private collection of films you want to watch, ready for the next movie night without another subscription or another app.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="capabilities wrap">
+      <div class="capability capability-orange">
+        <p class="section-kicker">Your second brain</p>
+        <h2>A place for the things you don’t want to lose.</h2>
+        <p>Ideas, recipes, plans, conversations, family stories, and the small details that make life work. Sparky helps you keep them close and make sense of them.</p>
+      </div>
+      <div class="capability capability-ink">
+        <p class="section-kicker">Your home, coordinated</p>
+        <h2>One assistant for the digital life around you.</h2>
+        <p>Keep family memories together. Keep your own film library ready for movie night. Block ads across the house. Ask for what you want instead of managing a collection of separate systems.</p>
+      </div>
+    </section>
+
+    <section class="closing wrap">
+      <p class="eyebrow">Private by design</p>
+      <h2>The intelligence of an AI assistant. The reach of a home server. The simplicity of a conversation.</h2>
+      <p>You tell Sparky what you want. Sparky handles the technical details.</p>
+      <button class="button button-light" type="button" data-waitlist-trigger>Join the waitlist <span aria-hidden="true">→</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <span>⚡ Sparky</span>
+    <nav><a href="/setup">Already have a box? Setup</a></nav>
+  </footer>
+
+  <script>
+    const form = document.querySelector('#waitlist-form');
+    const triggers = [...document.querySelectorAll('#waitlist-toggle, [data-waitlist-trigger]')];
+    const revealWaitlist = () => {
+      const heroForm = document.querySelector('#waitlist-form');
+      heroForm.hidden = false;
+      document.querySelector('#waitlist-toggle').hidden = true;
+      heroForm.querySelector('input').focus();
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+    triggers.forEach((trigger) => trigger.addEventListener('click', revealWaitlist));
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = new FormData(form).get('email');
+      const submit = form.querySelector('button[type=submit]');
+      submit.disabled = true;
+      submit.textContent = 'Joining…';
+      try {
+        const response = await fetch('https://dashboard.sparky-box.com/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (!response.ok) throw new Error('signup failed');
+        form.innerHTML = '<p class="form-note form-success">You’re on the list — we’ll be in touch.</p>';
+      } catch (error) {
+        submit.disabled = false;
+        submit.textContent = 'Join →';
+        form.insertAdjacentHTML('beforeend', '<p class="form-note">Something went wrong. Please try again.</p>');
+      }
+    });
+  </script>
+</body>
+</html>
