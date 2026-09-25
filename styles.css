@@ -162,3 +162,10 @@ section{padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(52px,7vw,96px)}
 }
 .list-heading{margin:0 0 16px;font-size:1.02rem;font-weight:700;letter-spacing:-.01em;color:var(--text)}
 
+.answer-box{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.answer-box label{display:block;margin-bottom:10px;font-weight:700;max-width:46ch}
+.answer-box textarea{width:100%;max-width:520px;border:1px solid #8a8073;border-radius:16px;background:#fff;
+  padding:12px 15px;font:inherit;color:var(--text);resize:vertical}
+.answer-box textarea::placeholder{color:#6f6659}
+.answer-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.answer-actions .form-note{margin:0}
