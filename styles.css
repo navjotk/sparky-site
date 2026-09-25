@@ -1,6 +1,6 @@
 /* Sparky — "spoken to, in a device". Dark instrument canvas, conversation-led. */
 :root{
-  --void:#f7f4ef;--panel:#fffdf8;--panel-2:#ebe4d9;--line:#ddd5c9;
+  --void:#f5efe4;--panel:#fffdf8;--panel-2:#eae1d3;--line:#dbd1c2;
   --text:#1b1a18;--text-dim:#5c554d;--signal:#b8430b;--signal-dim:#8f340a;
   --ok:#2e7d46;--radius:20px;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -19,6 +19,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 /* room glow: one warm light source behind the device */
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(900px 620px at 72% -8%,rgba(184,67,11,.10),transparent 62%)}
+/* paper grain */
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(#b9ab95 .5px,transparent .5px);background-size:5px 5px}
+/* hairlines framing the column, like a printed grid */
+.wrap{position:relative}
+.wrap:before,.wrap:after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line);opacity:.8}
+.wrap:before{left:14px}
+.wrap:after{right:14px}
 main,.site-header,.site-footer{position:relative;z-index:1}
 
 .site-header{height:88px;max-width:1140px;margin:auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between}
@@ -27,14 +35,14 @@ main,.site-header,.site-footer{position:relative;z-index:1}
 .header-note{font:500 .78rem/1 var(--mono);color:var(--text-dim);letter-spacing:.04em}
 
 h1,h2,h3{margin:0;font-weight:760;letter-spacing:-.03em;text-wrap:balance}
-h1{font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.06}
+h1{font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08}
 h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15}
-.lede{max-width:56ch;margin:20px 0 0;color:var(--text-dim);font-size:clamp(1.06rem,1.5vw,1.2rem);line-height:1.62}
+.lede{max-width:56ch;margin:16px 0 0;color:var(--text-dim);font-size:clamp(1rem,1.35vw,1.12rem);line-height:1.62}
 .section-label{margin:0 0 14px;font:600 .74rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
 
 /* hero: words left, live conversation right */
-.hero{padding-top:clamp(28px,5vw,60px);padding-bottom:clamp(56px,7vw,92px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.hero-actions{margin-top:30px}
+.hero{padding-top:clamp(18px,3vw,36px);padding-bottom:clamp(44px,6vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4.5vw,64px);align-items:start}
+.hero-actions{margin-top:24px}
 
 .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border:0;border-radius:999px;
   background:var(--signal);color:#fff;padding:14px 26px;font:inherit;font-weight:750;line-height:1;cursor:pointer;
@@ -59,9 +67,14 @@ h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15}
 .msg-meta .ok{color:var(--ok)}
 
 /* instrument readouts */
-.readout{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
-.readout li{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;
-  background:var(--panel);font:500 .8rem/1 var(--mono);color:var(--text-dim)}
+.readout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:28px 0 0;padding:0;list-style:none;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.readout li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 2px;
+  font:500 .82rem/1 var(--mono);color:var(--text-dim)}
+.readout li:nth-child(odd){padding-right:18px;border-right:1px solid var(--line)}
+.readout li:nth-child(even){padding-left:18px}
+.readout li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.readout .dot{order:2}
 .readout .dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
 .readout .dot-idle{background:var(--signal)}
 
@@ -119,7 +132,7 @@ section{padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(52px,7vw,96px)}
 .help{border-left:1px solid var(--signal);padding:12px 16px;color:var(--text-dim);background:var(--panel)}
 
 @media(max-width:860px){
-  .hero,.split{grid-template-columns:1fr;gap:34px}
+  .hero,.split{grid-template-columns:1fr;gap:26px}
   .panelset{grid-template-columns:1fr}
 }
 @media(max-width:700px){
