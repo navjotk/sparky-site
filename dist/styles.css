@@ -1,8 +1,8 @@
 /* Sparky — "spoken to, in a device". Dark instrument canvas, conversation-led. */
 :root{
-  --void:#121110;--panel:#1b1a18;--panel-2:#232120;--line:#302c28;
-  --text:#f4efe6;--text-dim:#b3a99d;--signal:#ff6a2b;--signal-dim:#c2500f;
-  --ok:#86bf7f;--radius:20px;
+  --void:#f7f4ef;--panel:#fffdf8;--panel-2:#ebe4d9;--line:#ddd5c9;
+  --text:#1b1a18;--text-dim:#5c554d;--signal:#b8430b;--signal-dim:#8f340a;
+  --ok:#2e7d46;--radius:20px;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
@@ -10,7 +10,7 @@
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;caret-color:var(--signal);background:var(--void)}
 body{margin:0;background:var(--void);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-::selection{background:var(--signal);color:#1a0d05}
+::selection{background:var(--signal);color:#fff}
 a{color:inherit;text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(255,106,43,.6);outline-offset:3px;border-radius:6px}
@@ -18,7 +18,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 
 /* room glow: one warm light source behind the device */
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(900px 620px at 72% -8%,rgba(255,106,43,.13),transparent 62%)}
+  background:radial-gradient(900px 620px at 72% -8%,rgba(184,67,11,.10),transparent 62%)}
 main,.site-header,.site-footer{position:relative;z-index:1}
 
 .site-header{height:88px;max-width:1140px;margin:auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between}
@@ -37,23 +37,25 @@ h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15}
 .hero-actions{margin-top:30px}
 
 .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border:0;border-radius:999px;
-  background:var(--signal);color:#1a0d05;padding:14px 26px;font:inherit;font-weight:750;line-height:1;cursor:pointer;
+  background:var(--signal);color:#fff;padding:14px 26px;font:inherit;font-weight:750;line-height:1;cursor:pointer;
   transition:background .18s ease,transform .18s ease}
-.button:hover{background:#ff8049;transform:translateY(-1px);text-decoration:none}
+.button:hover{background:#9c3a09;transform:translateY(-1px);text-decoration:none}
 .button:disabled{opacity:.65;cursor:wait;transform:none}
-.button-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.button-ghost{background:transparent;color:var(--text);border:1px solid #b7ac9c}
 .button-ghost:hover{background:var(--panel-2)}
 
 /* the conversation, as the product */
-.thread{display:flex;flex-direction:column;gap:12px;max-width:520px;margin:0}
-.thread-head{display:flex;align-items:center;gap:10px;padding-bottom:6px;border-bottom:1px solid var(--line);
+.thread{display:flex;flex-direction:column;gap:12px;max-width:540px;margin:0;
+  background:var(--panel);border-radius:22px;padding:18px 18px 22px;
+  box-shadow:0 10px 0 -6px var(--panel-2),0 14px 26px -20px rgba(27,26,24,.5)}
+.thread-head{display:flex;align-items:center;gap:10px;padding:2px 4px 12px;border-bottom:1px solid var(--line);
   font:600 .76rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
 .thread-head .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
 .msg{max-width:88%;padding:13px 17px;border-radius:var(--radius);font-size:1rem;line-height:1.55}
 .msg-you{align-self:flex-end;background:var(--panel-2);border-bottom-right-radius:6px}
-.msg-sparky{align-self:flex-start;background:var(--panel);border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg-sparky{align-self:flex-start;background:var(--void);border:1px solid var(--line);border-bottom-left-radius:6px}
 .msg-sparky strong{color:var(--signal);font-weight:700}
-.msg-meta{align-self:flex-start;font:500 .76rem/1.5 var(--mono);color:var(--text-dim);padding-left:6px}
+.msg-meta{align-self:flex-start;margin:2px 0 0;font:500 .76rem/1.5 var(--mono);color:var(--text-dim);padding-left:8px}
 .msg-meta .ok{color:var(--ok)}
 
 /* instrument readouts */
@@ -82,11 +84,11 @@ section{padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(52px,7vw,96px)}
 .waitlist-form{max-width:520px;margin-top:22px}
 .waitlist-form label{display:block;margin-bottom:8px;font-weight:700}
 .waitlist-row{display:flex;gap:10px}
-.waitlist-row input{min-width:0;flex:1;border:1px solid #6a6055;border-radius:999px;background:var(--panel-2);
+.waitlist-row input{min-width:0;flex:1;border:1px solid #8a8073;border-radius:999px;background:#fff;
   padding:15px 19px;font:inherit;color:var(--text)}
-.waitlist-row input::placeholder{color:#8e8478}
+.waitlist-row input::placeholder{color:#6f6659}
 .form-note{margin:12px 0 0;color:var(--text-dim);font-size:.88rem}
-.form-error{color:#ff9b73;font-weight:600}
+.form-error{color:#a3320b;font-weight:600}
 .inline-link{color:var(--signal);text-decoration:underline;text-underline-offset:3px}
 
 .closing{text-align:left}
@@ -110,7 +112,7 @@ section{padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(52px,7vw,96px)}
 .setup ol{list-style:none;padding:0;margin:40px 0;display:grid;gap:26px;counter-reset:steps}
 .setup li{counter-increment:steps;display:grid;grid-template-columns:42px 1fr;column-gap:16px}
 .setup li:before{content:counter(steps);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-  background:var(--signal);color:#1a0d05;font:700 .95rem/1 var(--sans)}
+  background:var(--signal);color:#fff;font:700 .95rem/1 var(--sans)}
 .setup li b,.setup li span{grid-column:2}
 .setup li span{display:block;margin-top:4px;color:var(--text-dim)}
 .setup code{background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font:.92em/1 var(--mono)}
@@ -146,3 +148,4 @@ section{padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(52px,7vw,96px)}
   @keyframes land{to{opacity:1;transform:none}}
 }
 .list-heading{margin:0 0 16px;font-size:1.02rem;font-weight:700;letter-spacing:-.01em;color:var(--text)}
+
