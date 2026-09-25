@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents, automation — and maintains them for you. You ask in Telegram.">
+  <meta name="description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents — and maintains them for you. You ask in Telegram.">
   <title>Sparky — A home server that looks after itself</title>
   <link rel="icon" href="/assets/svg/app-icon-orange.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#ff5a1f">
+  <meta name="theme-color" content="#121110">
   <link rel="stylesheet" href="/styles.css">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://sparky-box.com/homelab">
@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Sparky">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Sparky — A home server that looks after itself">
-  <meta property="og:description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents, automation — and maintains them for you. You ask in Telegram.">
+  <meta property="og:description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents — and maintains them for you. You ask in Telegram.">
   <meta property="og:url" content="https://sparky-box.com/homelab">
   <meta property="og:image" content="https://sparky-box.com/assets/png/social-card.png">
   <meta property="og:image:width" content="1200">
@@ -22,95 +22,104 @@
   <meta property="og:image:alt" content="Sparky">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sparky — A home server that looks after itself">
-  <meta name="twitter:description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents, automation — and maintains them for you. You ask in Telegram.">
+  <meta name="twitter:description" content="Sparky is a small box that runs your own services at home — media, ad blocking, documents — and maintains them for you. You ask in Telegram.">
   <meta name="twitter:image" content="https://sparky-box.com/assets/png/social-card.png">
 </head>
 <body data-variant="homelab">
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Sparky home"><img src="/assets/png/lockup-primary-600.png" width="600" height="217" alt="Sparky"></a>
+    <a class="brand" href="/" aria-label="Sparky home"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> sparky</a>
+    <span class="header-note">a computer that listens, at home</span>
   </header>
-
   <main>
     <section class="hero wrap">
-      <h1>A home server that looks after itself.</h1>
-      <p class="hero-copy">Sparky is a small box you plug in at home. Tell it what you want running &mdash; your own film and TV library, ad blocking for every device in the house, document scanning, home automation &mdash; and it installs the software, keeps it updated and backs it up. You ask for things in Telegram, in plain English.</p>
-      <button class="button" id="waitlist-toggle" type="button" hidden>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
-      <noscript><p class="form-note">The form below works without JavaScript.</p></noscript>
-      <form class="waitlist-form" id="waitlist-form" action="https://dashboard.sparky-box.com/waitlist" method="post" hidden>
-        <label for="waitlist-email">Your email</label>
-        <div class="waitlist-row">
-          <input id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
-          <button class="button" type="submit">Join <span aria-hidden="true">&rarr;</span></button>
-        </div>
-        <input type="hidden" name="variant" value="homelab">
-        <p class="form-note" id="waitlist-status" role="status" aria-live="polite">We&rsquo;ll only use this to let you know when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.</p>
-        <p class="form-note form-error" id="waitlist-error" role="alert" hidden></p>
-      </form>
-    </section>
-
-    <section class="intro wrap">
-      <h2 class="intro-title">The homelab, without the admin.</h2>
-      <p class="intro-copy">Self-hosting gives you your own services instead of someone else&rsquo;s subscriptions. It usually also gives you a second job. Sparky does that job.</p>
-    </section>
-
-    <section class="story wrap" aria-label="What Sparky runs and maintains">
-      <article class="story-card story-card-wide">
-        <div class="story-time">You ask</div>
-        <div>
-          <h2>&ldquo;Set up a film library I can watch on the TV.&rdquo;</h2>
-          <p>Sparky installs and configures the stack, puts it behind a name that works on your network, and tells you when it&rsquo;s ready. No compose files, no port numbers, no wiki.</p>
-        </div>
-      </article>
-      <article class="story-card">
-        <div class="story-time">It runs</div>
-        <div>
-          <h2>Real services, on your hardware.</h2>
-          <p>Plex or Jellyfin, Pi-hole, Home Assistant, Paperless-ngx, Tandoor, n8n and more &mdash; the same open source people run by hand, installed and wired up for you.</p>
-        </div>
-      </article>
-      <article class="story-card">
-        <div class="story-time">It maintains</div>
-        <div>
-          <h2>Updates, backups, watching.</h2>
-          <p>Sparky updates itself and the services it installed, takes nightly backups, and restarts what falls over. When something needs a decision, it asks you instead of failing quietly.</p>
-        </div>
-      </article>
-      <article class="story-card story-card-wide story-card-dark">
-        <div class="story-time">It stays yours</div>
-        <div>
-          <h2>The box is in your house, and so is the data.</h2>
-          <p>Your files and services live on the device you own. Nothing needs to leave your home for the homelab to work. If you use the optional managed AI, only those messages pass through Sparky Cloud.</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="capabilities wrap">
-      <div class="capability capability-orange">
-        <h2>You don&rsquo;t administer it. You ask it.</h2>
-        <p>Installing, configuring, updating, moving data, adding a service, fixing what broke: all of it happens through a conversation, not a terminal.</p>
+      <div>
+        <h1>A home server that looks after itself.</h1>
+        <p class="lede">Sparky is a small box you plug in at home. Tell it what you want running and it installs the software, keeps it updated and backs it up. You ask in Telegram, in plain English.</p>
+      <div class="hero-actions">
+        <button class="button" id="waitlist-toggle" type="button" hidden>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
+        <noscript><p class="form-note">The form below works without JavaScript.</p></noscript>
+        <form class="waitlist-form" id="waitlist-form" action="https://dashboard.sparky-box.com/waitlist" method="post" hidden>
+          <label for="waitlist-email">Your email</label>
+          <div class="waitlist-row">
+            <input id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+            <button class="button" type="submit">Join <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <input type="hidden" name="variant" value="homelab">
+          <p class="form-note" id="waitlist-status" role="status" aria-live="polite">We&rsquo;ll only use this to let you know when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.</p>
+          <p class="form-note form-error" id="waitlist-error" role="alert" hidden></p>
+        </form>
       </div>
-      <div class="capability capability-ink">
-        <h2>It keeps working when you stop paying attention.</h2>
-        <p>A homelab fails slowly, in ways you notice months later. Sparky watches the parts that rot &mdash; updates, disk space, backups, dead containers &mdash; because that is the part people give up on.</p>
+      </div>
+      <div class="thread thread-animate">
+        <div class="thread-head"><span class="dot"></span> telegram &middot; sparky</div>
+        <p class="msg msg-you">set up plex with sonarr and radarr</p>
+        <p class="msg msg-sparky">Done. Media is on the second disk, and it&rsquo;s watching for your shows from tonight.</p>
+        <p class="msg-meta"><span class='ok'>&#9679;</span> plex &middot; sonarr &middot; radarr &middot; prowlarr all healthy</p>
+        <p class="msg msg-you">and keep them updated</p>
+        <p class="msg msg-sparky">Already am &mdash; nightly, with a backup before each one.</p>
       </div>
     </section>
 
-    <section class="closing wrap">
-      <h2>Everything a homelab gives you. None of the evenings it takes.</h2>
-      <p>Tell Sparky what you want running. It handles the rest, and tells you what it did.</p>
-      <button class="button button-light" type="button" data-waitlist-trigger>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
+    <section class="wrap rule">
+      <div class="split">
+        <div class="split-copy">
+          <h2>Self-hosting gives you your own services. It usually also gives you a second job.</h2>
+          <p>Compose files, reverse proxies, disks filling at 2am, an update that breaks the stack while you&rsquo;re away. Sparky does that job: it installs, wires up, updates, backs up and restarts what falls over, and asks you only when something needs a decision.</p>
+      <ul class="readout">
+        <li><span class="dot"></span> film library</li>
+        <li><span class="dot"></span> ad blocking, house-wide</li>
+        <li><span class="dot"></span> documents</li>
+        <li><span class="dot dot-idle"></span> backup nightly 03:00</li>
+      </ul>
+        </div>
+      <div class="thread thread-animate">
+        <div class="thread-head"><span class="dot"></span> telegram &middot; sparky</div>
+        <p class="msg msg-sparky">Heads up: the media disk is nearly full. Want me to clear watched films older than a year?</p>
+        <p class="msg msg-you">do it</p>
+        <p class="msg-meta"><span class='ok'>&#9679;</span> space reclaimed &middot; backup verified</p>
+      </div>
+      </div>
+    </section>
+
+    <section class="wrap rule">
+      <h2>A real homelab, without the evenings it usually costs.</h2>
+      <div class="panelset">
+        <article class="panel"><span class="tag">Install</span><h3>Ask, don&rsquo;t configure.</h3><p>Name the thing you want. Sparky picks sane defaults, wires the storage and puts it behind a name that works on your network.</p></article>
+        <article class="panel"><span class="tag">Maintain</span><h3>Updates, backups, watching.</h3><p>It updates itself and what it installed, backs up nightly and restarts dead services instead of failing quietly.</p></article>
+        <article class="panel"><span class="tag">Own</span><h3>Your hardware, your data.</h3><p>Everything runs on the box in your house. No subscription owns your library, your files or your logs.</p></article>
+        <article class="panel"><span class="tag">Extend</span><h3>It grows with you.</h3><p>Add a service later and it fits into what&rsquo;s already there, sharing storage, network and backups.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap rule">
+      <div class="split">
+        <div class="split-copy">
+          <h2>The same open source, set up properly.</h2>
+          <p>Nothing proprietary, nothing locked. If you outgrow Sparky, it is a Linux box with your data on it.</p>
+        </div>
+        <div class="split-copy">
+      <ul class="catalogue">
+        <li>plex</li><li>jellyfin</li><li>pi-hole</li><li>home assistant</li><li>paperless-ngx</li>
+        <li>tandoor</li><li>n8n</li><li>karakeep</li><li>portainer</li><li>&hellip;and more</li>
+      </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap rule closing">
+      <h2>Tell it what you want running. It handles the rest.</h2>
+      <p class="lede">Join the waitlist and we&rsquo;ll tell you when it&rsquo;s ready.</p>
+      <p class="hero-actions"><button class="button button-ghost" type="button" data-waitlist-trigger>Join the waitlist <span aria-hidden="true">&rarr;</span></button></p>
     </section>
   </main>
-
   <footer class="site-footer wrap">
-    <span class="brand-mark"><img src="/assets/svg/spark-sharp-orange.svg" width="16" height="16" alt="" aria-hidden="true"> Sparky</span>
+    <span class="brand-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> Sparky</span>
     <nav>
       <a href="/setup">Already have a box? Setup</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </nav>
   </footer>
-
   <script src="/waitlist.js" defer></script>
 </body>
 </html>

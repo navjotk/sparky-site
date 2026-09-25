@@ -36,8 +36,9 @@ description: Search and social-preview review for the Sparky marketing site (spa
 - Structured data: `Organization` + `WebSite` JSON-LD on the homepage only. Do not add `Product`,
   `Offer`, `AggregateRating` or `Review` until real prices and real reviews exist — fabricated
   structured data is a manual-action risk, not a clever trick.
-- Social image: `assets/png/social-card.png`, 1200×630. Rebuild it with ffmpeg from
-  `assets/png/lockup-primary.png` on cream `#f7f4ef` (the dark lockup disappears on ink).
+- Social image: `assets/png/social-card.png`, 1200×630, on the dark canvas `#121110`. Rebuild it from
+  `assets/png/lockup-primary.png` (transparent): recolour the non-orange pixels to cream, crop to the
+  bounding box, centre it. Do NOT composite `lockup-on-ink.png` — it carries its own panel background.
 
 ## Campaign landing pages
 

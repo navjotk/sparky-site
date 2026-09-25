@@ -52,3 +52,21 @@
     }
   });
 })();
+
+// The reply lands after you ask: start each thread when it scrolls into view.
+(() => {
+  const threads = document.querySelectorAll('.thread-animate');
+  if (!threads.length) return;
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return; // messages stay visible; nothing to animate
+  }
+  // Only hide them once we know we can bring them back.
+  threads.forEach((t) => t.classList.add('js-armed'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-live'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.25 });
+  threads.forEach((t) => io.observe(t));
+})();

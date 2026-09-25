@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="A small box on your shelf and a chat in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
+  <meta name="description" content="A small computer on your shelf, talked to in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
   <title>Sparky — The assistant that lives in your house</title>
   <link rel="icon" href="/assets/svg/app-icon-orange.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#ff5a1f">
+  <meta name="theme-color" content="#121110">
   <link rel="stylesheet" href="/styles.css">
   <link rel="canonical" href="https://sparky-box.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sparky">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Sparky — The assistant that lives in your house">
-  <meta property="og:description" content="A small box on your shelf and a chat in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
+  <meta property="og:description" content="A small computer on your shelf, talked to in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
   <meta property="og:url" content="https://sparky-box.com/">
   <meta property="og:image" content="https://sparky-box.com/assets/png/social-card.png">
   <meta property="og:image:width" content="1200">
@@ -21,95 +21,106 @@
   <meta property="og:image:alt" content="Sparky">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sparky — The assistant that lives in your house">
-  <meta name="twitter:description" content="A small box on your shelf and a chat in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
+  <meta name="twitter:description" content="A small computer on your shelf, talked to in Telegram. Sparky remembers, plans and runs real services on hardware you own.">
   <meta name="twitter:image" content="https://sparky-box.com/assets/png/social-card.png">
 </head>
 <body data-variant="assistant">
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Sparky home"><img src="/assets/png/lockup-primary-600.png" width="600" height="217" alt="Sparky"></a>
+    <a class="brand" href="/" aria-label="Sparky home"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> sparky</a>
+    <span class="header-note">a computer that listens, at home</span>
   </header>
-
   <main>
     <section class="hero wrap">
-      <h1>The assistant that lives in your house.</h1>
-      <p class="hero-copy">Sparky is a small box on your shelf and a chat in Telegram. Ask it to remember something, plan the week, or set up a film library for the family &mdash; it does the technical part on hardware you own.</p>
-      <button class="button" id="waitlist-toggle" type="button" hidden>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
-      <noscript><p class="form-note">The form below works without JavaScript.</p></noscript>
-      <form class="waitlist-form" id="waitlist-form" action="https://dashboard.sparky-box.com/waitlist" method="post" hidden>
-        <label for="waitlist-email">Your email</label>
-        <div class="waitlist-row">
-          <input id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
-          <button class="button" type="submit">Join <span aria-hidden="true">&rarr;</span></button>
-        </div>
-        <input type="hidden" name="variant" value="assistant">
-        <p class="form-note" id="waitlist-status" role="status" aria-live="polite">We&rsquo;ll only use this to let you know when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.</p>
-        <p class="form-note form-error" id="waitlist-error" role="alert" hidden></p>
-      </form>
-    </section>
-
-    <section class="intro wrap">
-      <h2 class="intro-title">One assistant. Every part of home life.</h2>
-      <p class="intro-copy">Sparky starts with a conversation. Then that conversation reaches into the things that matter: your plans, your memories, your meals, your entertainment, and the way your home works.</p>
-    </section>
-
-    <section class="story wrap" aria-label="A day with Sparky">
-      <article class="story-card story-card-wide">
-        <div class="story-time">In the morning</div>
-        <div>
-          <h2>&ldquo;What do I need to know today?&rdquo;</h2>
-          <p>Sparky brings together the plans, reminders, messages, and priorities that deserve your attention.</p>
-        </div>
-      </article>
-      <article class="story-card">
-        <div class="story-time">During the day</div>
-        <div>
-          <h2>&ldquo;Remember this.&rdquo;</h2>
-          <p>Send Sparky a thought, a link, a voice note, or a half-formed idea, in the same Telegram chat you use for everything else. Find it again when it matters.</p>
-        </div>
-      </article>
-      <article class="story-card">
-        <div class="story-time">At home</div>
-        <div>
-          <h2>&ldquo;What should we cook this week?&rdquo;</h2>
-          <p>Save recipes wherever you find them, make a meal plan, and turn it into one shopping list for the family.</p>
-        </div>
-      </article>
-      <article class="story-card story-card-wide story-card-dark">
-        <div class="story-time">When someone recommends a film</div>
-        <div>
-          <h2>&ldquo;Add it to our library.&rdquo;</h2>
-          <p>Sparky sets up the film and TV library on its own disk and keeps it running &mdash; ready for the next movie night without another subscription or another app.</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="capabilities wrap">
-      <div class="capability capability-orange">
-        <h2>A place for the things you don&rsquo;t want to lose.</h2>
-        <p>Ideas, recipes, plans, conversations, family stories, and the small details that make life work. Sparky helps you keep them close and make sense of them.</p>
+      <div>
+        <h1>The assistant that lives in your house.</h1>
+        <p class="lede">Sparky is a small computer on your shelf. You talk to it in Telegram, the same place you talk to everyone else, and it does the technical part on hardware you own.</p>
+      <div class="hero-actions">
+        <button class="button" id="waitlist-toggle" type="button" hidden>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
+        <noscript><p class="form-note">The form below works without JavaScript.</p></noscript>
+        <form class="waitlist-form" id="waitlist-form" action="https://dashboard.sparky-box.com/waitlist" method="post" hidden>
+          <label for="waitlist-email">Your email</label>
+          <div class="waitlist-row">
+            <input id="waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+            <button class="button" type="submit">Join <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <input type="hidden" name="variant" value="assistant">
+          <p class="form-note" id="waitlist-status" role="status" aria-live="polite">We&rsquo;ll only use this to let you know when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.</p>
+          <p class="form-note form-error" id="waitlist-error" role="alert" hidden></p>
+        </form>
       </div>
-      <div class="capability capability-ink">
-        <h2>It can actually do things, because it runs a real machine.</h2>
-        <p>Most assistants can only answer. Sparky has a computer in your home behind it, so it can install software, block ads across the house, keep your media library and back it all up.</p>
+      </div>
+      <div class="thread thread-animate">
+        <div class="thread-head"><span class="dot"></span> telegram &middot; sparky</div>
+        <p class="msg msg-you">Remind me what I said about the boiler guy</p>
+        <p class="msg msg-sparky">You saved his number in March and said he could come any Thursday after 4.</p>
+        <p class="msg msg-you">Also set up a film library for the family</p>
+        <p class="msg msg-sparky">Installing it now &mdash; I&rsquo;ll message you when it&rsquo;s on the TV.</p>
+        <p class="msg-meta"><span class='ok'>&#9679;</span> running on your box</p>
       </div>
     </section>
 
-    <section class="closing wrap">
-      <h2>The intelligence of an assistant. The reach of a machine you own.</h2>
-      <p>You tell Sparky what you want. Sparky handles the technical details, on a box that sits in your home.</p>
-      <button class="button button-light" type="button" data-waitlist-trigger>Join the waitlist <span aria-hidden="true">&rarr;</span></button>
+    <section class="wrap rule">
+      <div class="split">
+        <div class="split-copy">
+          <h2>Most assistants can only answer. This one has a machine behind it.</h2>
+          <p>Ask a phone assistant to keep your films, block ads on every device or file your paperwork and it will apologise. Sparky runs the software that does those things, on a computer in your home, and looks after it afterwards.</p>
+      <ul class="readout">
+        <li><span class="dot"></span> film library</li>
+        <li><span class="dot"></span> ad blocking, house-wide</li>
+        <li><span class="dot"></span> documents</li>
+        <li><span class="dot dot-idle"></span> backup nightly 03:00</li>
+      </ul>
+        </div>
+      <div class="thread thread-animate">
+        <div class="thread-head"><span class="dot"></span> telegram &middot; sparky</div>
+        <p class="msg msg-you">The ads on the kids&rsquo; tablet are awful</p>
+        <p class="msg msg-sparky">I can block them for every device on the wi-fi. Want me to set that up?</p>
+        <p class="msg msg-you">yes please</p>
+        <p class="msg-meta"><span class='ok'>&#9679;</span> ad blocking active on every device</p>
+      </div>
+      </div>
+    </section>
+
+    <section class="wrap rule">
+      <h2>It remembers, plans and runs things, without an app to learn.</h2>
+      <div class="panelset">
+        <article class="panel"><span class="tag">Morning</span><h3>&ldquo;What do I need to know today?&rdquo;</h3><p>The plans, reminders and messages that deserve your attention, in one reply.</p></article>
+        <article class="panel"><span class="tag">Any time</span><h3>&ldquo;Remember this.&rdquo;</h3><p>A thought, a link, a voice note, a half-formed idea. Findable later, when it matters.</p></article>
+        <article class="panel"><span class="tag">Dinner</span><h3>&ldquo;What should we cook this week?&rdquo;</h3><p>Recipes you saved become a meal plan, then one shopping list for the family.</p></article>
+        <article class="panel"><span class="tag">Quietly</span><h3>It keeps itself running.</h3><p>Updates, nightly backups and restarts happen without you. You hear about the decisions, not the chores.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap rule">
+      <div class="split">
+        <div class="split-copy">
+          <h2>The computer is in your house, and so is what&rsquo;s on it.</h2>
+          <p>Your files and services live on the device you own. Nothing has to leave home for any of this to work. If you use the optional managed AI, only those messages pass through Sparky Cloud.</p>
+        </div>
+        <div class="split-copy">
+          <h3 class="list-heading">What it can run</h3>
+      <ul class="catalogue">
+        <li>plex</li><li>jellyfin</li><li>pi-hole</li><li>home assistant</li><li>paperless-ngx</li>
+        <li>tandoor</li><li>n8n</li><li>karakeep</li><li>portainer</li><li>&hellip;and more</li>
+      </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap rule closing">
+      <h2>Ask for what you want. Sparky does the technical part.</h2>
+      <p class="lede">Join the waitlist and we&rsquo;ll tell you when it&rsquo;s ready.</p>
+      <p class="hero-actions"><button class="button button-ghost" type="button" data-waitlist-trigger>Join the waitlist <span aria-hidden="true">&rarr;</span></button></p>
     </section>
   </main>
-
   <footer class="site-footer wrap">
-    <span class="brand-mark"><img src="/assets/svg/spark-sharp-orange.svg" width="16" height="16" alt="" aria-hidden="true"> Sparky</span>
+    <span class="brand-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> Sparky</span>
     <nav>
       <a href="/setup">Already have a box? Setup</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </nav>
   </footer>
-
   <script src="/waitlist.js" defer></script>
 </body>
 </html>
