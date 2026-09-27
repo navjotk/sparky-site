@@ -74,11 +74,20 @@
         body: JSON.stringify({ email, variant })
       });
       if (!response.ok) throw new Error('signup failed');
+      // An address already on the list creates nothing and sends nothing, so
+      // promising a fresh confirmation would be a lie -- and one that reads as
+      // a broken form to anyone who notices the email never arrives.
+      let already = false;
+      try { already = !!(await response.clone().json()).already_joined; } catch (e) {}
       joined = true;
       form.querySelector('.waitlist-row')?.remove();
       form.querySelector('label')?.remove();
-      status.innerHTML = 'You’re on the list — we’ll email ' + String(email).replace(/[<>&"]/g, '') +
-        ' when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.';
+      const safe = String(email).replace(/[<>&"]/g, '');
+      status.innerHTML = already
+        ? safe + ' is already on the list — nothing more to do. ' +
+          '<a class="inline-link" href="/privacy">How we handle your data</a>.'
+        : 'You’re on the list — we’ll email ' + safe +
+          ' when Sparky is available. <a class="inline-link" href="/privacy">How we handle your data</a>.';
       askWhatItIs(email);
     } catch (error) {
       submit.disabled = false;
