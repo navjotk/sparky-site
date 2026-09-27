@@ -1,0 +1,16 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  dist-in-sync:
+    # dist/ is what the Worker serves. If it drifts from source, the live site
+    # stops matching the repo and nobody notices until someone reads the page.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: dist/ matches source
+        run: ./build.sh --check

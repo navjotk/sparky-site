@@ -7,9 +7,10 @@ description: Search and social-preview review for the Sparky marketing site (spa
 
 ## Repo facts that change the work
 
-- Source pages live at the repo root; `dist/` is a **hand-maintained mirror** that Wrangler
-  actually serves (`wrangler.toml` → `[assets] directory = "dist"`). **Every edit must be copied
-  into `dist/`, or it never ships.** Verify with `diff -r --brief . dist` (ignoring `.git`).
+- Source pages live at the repo root; `dist/` is what Wrangler actually serves
+  (`wrangler.toml` → `[assets] directory = "dist"`). **Run `./build.sh` after editing any page**,
+  which syncs source into `dist/` and prunes orphans. `./build.sh --check` fails if they differ and
+  is what CI runs, so drift cannot reach main unnoticed. Never hand-edit `dist/`.
 - Cloudflare assets serve `/setup.html` at `/setup`. Canonical URLs use the extensionless form.
 - Canonical origin is `https://sparky-box.com` (not `www`, not the workers.dev URL).
 - The operator dashboard lives at `dashboard.sparky-box.com`; devices get `<name>.sparky-box.com`.
