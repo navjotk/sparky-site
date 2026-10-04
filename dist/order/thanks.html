@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Your Sparky order is confirmed.">
+  <title>Sparky &mdash; Order confirmed</title>
+  <link rel="icon" href="/assets/svg/app-icon-orange.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Only reachable with a Stripe session id; nothing here should be indexed. -->
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/" aria-label="Sparky home"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> sparky</a></header>
+  <main class="setup">
+    <p class="section-label">Order confirmed</p>
+    <h1>That&rsquo;s your Sparky.</h1>
+    <p class="lede">Stripe has your payment and your delivery address. A receipt is on its way to the email you paid with.</p>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li><b>We build and test your box</b><span>It gets set up, updated and checked before it leaves us.</span></li>
+      <li><b>It arrives, with an invitation code</b><span>Plug it in, connect it to your home network, and open <code>http://sparky.local</code> from a device on the same network.</span></li>
+      <li><b>You enter the code, and it&rsquo;s yours</b><span>Setup takes a few minutes. After that you ask Sparky for what you want.</span></li>
+    </ol>
+
+    <p class="help">If you want a large film library, add a hard drive. Sparky will tell you what it needs and set it up when you plug it in.</p>
+
+    <h2>If something&rsquo;s wrong</h2>
+    <p>Email <a class="inline-link" href="mailto:hello@sparky-box.com">hello@sparky-box.com</a> and a person will answer. You have 14 days from the day it arrives to change your mind for any reason, and your statutory rights are unaffected &mdash; <a class="inline-link" href="/terms">the terms</a> have the detail.</p>
+
+    <p><a class="button" href="/setup">See the setup steps <span aria-hidden="true">&rarr;</span></a></p>
+  </main>
+  <footer class="site-footer wrap">
+    <span class="brand-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> Sparky</span>
+    <nav>
+      <a href="/setup">Setup</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </footer>
+  <!-- Cloudflare Web Analytics: cookieless, no personal data, so no consent banner. -->
+  <!-- Stripe returns here with ?session_id=... . Drop it from the address before
+       anything records the URL; the order is already reconciled by webhook, so
+       nothing on this page needs it. -->
+  <script>
+    try {
+      if (location.search) history.replaceState(null, '', location.pathname);
+    } catch (e) {}
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "39027f833a6b4c8289a9b877d79d23f3"}'></script>
+</body>
+</html>

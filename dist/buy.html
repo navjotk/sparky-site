@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Order a Sparky: a small box that runs your own services at home — media, ad blocking, home automation, documents — and maintains them for you.">
+  <title>Sparky &mdash; Order your Sparky</title>
+  <link rel="icon" href="/assets/svg/app-icon-orange.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Reached from the waitlist email, not from search. -->
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://sparky-box.com/buy">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sparky">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Order your Sparky">
+  <meta property="og:description" content="A small box that runs your own services at home and maintains them for you.">
+  <meta property="og:url" content="https://sparky-box.com/buy">
+  <meta property="og:image" content="https://sparky-box.com/assets/png/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sparky">
+</head>
+<body data-variant="homelab">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Sparky home"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> sparky</a>
+    <span class="header-note">first batch &middot; shipping to the UK</span>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div>
+        <p class="section-label">For the waitlist</p>
+        <h1>Your Sparky is ready to order.</h1>
+        <p class="lede">The first batch is built, and you&rsquo;re seeing it before anyone else.</p>
+        <p class="lede">Sparky is a small computer that lives in your house. You plug it in, and it runs the things you&rsquo;d otherwise pay a subscription for, or never quite get round to setting up.</p>
+        <div class="hero-actions">
+          <a class="button" href="#order">Order your Sparky <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="thread thread-animate">
+        <div class="thread-head"><span class="dot"></span> telegram &middot; sparky</div>
+        <p class="msg msg-you">set up plex with sonarr and radarr</p>
+        <p class="msg msg-sparky">Done. Media is on the second disk, and it&rsquo;s watching for your shows from tonight.</p>
+        <p class="msg-meta"><span class="ok">&#9679;</span> plex &middot; sonarr &middot; radarr &middot; prowlarr all healthy</p>
+        <p class="msg msg-you">and keep them updated</p>
+        <p class="msg msg-sparky">Already am &mdash; nightly, with a backup before each one.</p>
+      </div>
+    </section>
+
+    <section class="wrap rule">
+      <p class="section-label">What it runs</p>
+      <div class="split split-top">
+        <div class="split-copy">
+          <h2>People call this a home lab. Usually it&rsquo;s also a hobby.</h2>
+          <p>The name makes it sound like one, and most of the time it is: config files, reverse proxies, a disk quietly filling up at 2am, an update that breaks everything the week you&rsquo;re away. That&rsquo;s the part that puts most people off, and it&rsquo;s the part Sparky takes over. It installs what you ask for, wires it together, keeps it updated, backs it up, and restarts whatever falls over.</p>
+          <p>You ask it in Telegram, in plain English. &ldquo;Set up Plex.&rdquo; &ldquo;What did I spend on the car last month?&rdquo; It answers like an assistant would, except it can actually do the thing, because the machine is yours and it&rsquo;s sitting in your hallway.</p>
+        </div>
+        <ul class="lineup">
+          <li>Your own <b>film and TV library</b></li>
+          <li><b>Ad blocking</b> across every device on your wifi</li>
+          <li><b>Home automation</b>, with every smart device in one app instead of five, running on your box rather than through someone else&rsquo;s cloud</li>
+          <li><b>Private file storage</b>, with backups that happen nightly</li>
+          <li>Your <b>expenses</b>, your <b>recipes</b> and your <b>bookmarks</b>, kept on your machine instead of scattered across apps that read them</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap rule" id="order">
+      <p class="section-label">What comes with it</p>
+      <h2>One box, one price.</h2>
+      <div class="split split-top">
+        <div class="split-copy">
+          <!-- The included period is the cloud's to state, so these two rows
+               stay hidden until it has been read. They are never a guess. -->
+          <ul class="lineup">
+            <li>The <b>Sparky box</b>, set up and ready to plug in</li>
+            <li data-offer-row hidden><b><span data-offer-months></span> months of the built-in AI</b>, with nothing to sign up for or configure</li>
+            <li data-offer-row hidden><b><span data-offer-months></span> months of support</b> from us, over email</li>
+          </ul>
+          <p class="form-note">For a large film library you&rsquo;ll want to add a hard drive. Sparky will tell you what it needs and set it up when you plug it in.</p>
+          <!-- Required by /terms: the included period is stated at the time of
+               purchase and runs from setup, not from the order. -->
+          <p class="form-note" data-offer-row hidden>The included months start when your Sparky is set up, not when you order it. They are not a subscription &mdash; nothing renews, and we don&rsquo;t take card details for them.</p>
+        </div>
+
+        <!-- Ships closed: no price, nothing orderable. The worker fills this in
+             from GET /offer before the page is sent, and buy.js does the same
+             again in the browser. Neither invents a price, so a page that
+             cannot reach the cloud simply does not sell. -->
+        <div class="offer" id="offer" data-state="closed">
+          <p class="offer-state" id="offer-state">Checking availability</p>
+          <p class="offer-price" id="offer-price" hidden>
+            <span class="offer-figure" id="offer-figure"></span>
+            <span class="offer-terms">delivered, to UK addresses</span>
+          </p>
+          <form class="waitlist-form" id="order-form" action="https://dashboard.sparky-box.com/orders/checkout" method="post">
+            <label for="order-email">Your email</label>
+            <div class="waitlist-row">
+              <input id="order-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" maxlength="254" placeholder="you@example.com" required disabled>
+              <button class="button" type="submit" id="order-submit" disabled>Order <span aria-hidden="true">&rarr;</span></button>
+            </div>
+            <p class="form-note" id="order-status" role="status" aria-live="polite"><span id="order-status-text">One moment &mdash; we&rsquo;re checking today&rsquo;s price and availability.</span> <a class="inline-link" href="/terms">Terms, returns and cancellation</a>.</p>
+            <p class="form-note form-error" id="order-error" role="alert" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap rule closing">
+      <h2>Changing your mind is fine.</h2>
+      <p class="lede">You have 14 days from the day it arrives to cancel for any reason, without giving one. Separately, if something is wrong with it, you can reject it within 30 days under the Consumer Rights Act 2015. Your statutory rights are unaffected.</p>
+      <p class="hero-actions"><a class="button button-ghost" href="/terms">Read the terms <span aria-hidden="true">&rarr;</span></a></p>
+    </section>
+  </main>
+  <footer class="site-footer wrap">
+    <span class="brand-mark"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 4 C53 30 70 47 96 50 C70 53 53 70 50 96 C47 70 30 53 4 50 C30 47 47 30 50 4 Z" fill="currentColor"/></svg> Sparky</span>
+    <nav>
+      <a href="/setup">Already have a box? Setup</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </footer>
+  <!-- Cloudflare Web Analytics: cookieless, no personal data, so no consent banner. -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "39027f833a6b4c8289a9b877d79d23f3"}'></script>
+  <script src="/buy.js" defer></script>
+  <script src="/waitlist.js" defer></script>
+</body>
+</html>

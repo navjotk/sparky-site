@@ -25,8 +25,11 @@ FILES=(
   privacy.html
   setup.html
   terms.html
+  buy.html
+  order/thanks.html
   styles.css
   waitlist.js
+  buy.js
   robots.txt
   sitemap.xml
 )

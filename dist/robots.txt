@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /billing
+# Reached from the waitlist email only, and both pages carry noindex too.
+Disallow: /buy
+Disallow: /order/
 
 Sitemap: https://sparky-box.com/sitemap.xml
