@@ -31,16 +31,11 @@ const CLOSED_NOTES = {
   unavailable: 'Ordering isn’t open yet. You’re on the list, and we’ll email you the moment it is.',
 };
 
-class SetText {
-  constructor(text) { this.text = text; }
-  element(el) { el.setInnerContent(this.text); }
-}
-class Unhide {
-  element(el) { el.removeAttribute('hidden'); }
-}
-class Enable {
-  element(el) { el.removeAttribute('disabled'); }
-}
+const setText = (value) => ({ element: (el) => el.setInnerContent(value) });
+const unhide = () => ({ element: (el) => el.removeAttribute('hidden') });
+const hide = () => ({ element: (el) => el.setAttribute('hidden', '') });
+const enable = () => ({ element: (el) => el.removeAttribute('disabled') });
+const setAttr = (name, value) => ({ element: (el) => el.setAttribute(name, value) });
 
 async function renderBuy(request, env, ctx) {
   const page = await env.ASSETS.fetch(new Request(new URL('/buy', request.url), {
@@ -71,12 +66,12 @@ async function renderBuy(request, env, ctx) {
   if (!offer) return new Response(page.body, { status: page.status, headers });
 
   if (offer.included_months > 0) {
-    html.on('[data-offer-months]', new SetText(String(offer.included_months)));
-    html.on('[data-offer-row]', new Unhide());
+    html.on('[data-offer-months]', setText(String(offer.included_months)));
+    html.on('[data-offer-row]', unhide());
   }
   if (offer.price_pence > 0) {
-    html.on('#offer-figure', new SetText(money(offer.price_pence, offer.currency)));
-    html.on('#offer-price', new Unhide());
+    html.on('#offer-figure', setText(money(offer.price_pence, offer.currency)));
+    html.on('#offer-price', unhide());
   }
 
   const closed = !offer.available ? 'unavailable'
@@ -84,16 +79,14 @@ async function renderBuy(request, env, ctx) {
     : null;
 
   if (closed) {
-    html.on('#offer-state', new SetText(closed === 'soldout' ? 'Sold out' : 'Not on sale yet'));
-    html.on('#order-status-text', new SetText(CLOSED_NOTES[closed]));
+    html.on('#offer-state', setText(closed === 'soldout' ? 'Sold out' : 'Not on sale yet'));
+    html.on('#order-status-text', setText(CLOSED_NOTES[closed]));
   } else {
-    html.on('#offer', {
-      element(el) { el.setAttribute('data-state', 'open'); },
-    });
-    html.on('#offer-state', { element(el) { el.setAttribute('hidden', ''); } });
-    html.on('#order-email', new Enable());
-    html.on('#order-submit', new Enable());
-    html.on('#order-status-text', new SetText(OPEN_NOTE));
+    html.on('#offer', setAttr('data-state', 'open'));
+    html.on('#offer-state', hide());
+    html.on('#order-email', enable());
+    html.on('#order-submit', enable());
+    html.on('#order-status-text', setText(OPEN_NOTE));
   }
 
   return html.transform(new Response(page.body, { status: page.status, headers }));
