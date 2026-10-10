@@ -8,14 +8,14 @@ web
 
 ## Users
 
-Two candidate audiences, deliberately undecided — the point of the positioning test:
+**Primary: homelab-aware people** who already know what self-hosting is (or own a Pi/NAS) and want it
+to stop being a chore. Settled by the positioning test, 2026-10-10.
 
-- **Homelab-aware people** who already know what self-hosting is (or own a Pi/NAS) and want it to stop
-  being a chore.
-- **Curious but non-technical households** who want the outcomes (own media library, ad blocking,
-  private assistant) and never the admin.
+**Secondary: curious but non-technical households** who want the outcomes (own media library, ad
+blocking, private assistant) and never the admin. Still addressed, at `/assistant`, but not what the
+site leads with.
 
-Traffic for the test comes from Instagram ads, UK targeting, mostly on phones.
+Test traffic came from Instagram ads, UK targeting, mostly on phones.
 
 ## Product Purpose
 
@@ -26,14 +26,22 @@ reviews, nothing to quote.
 
 ## Positioning
 
-**Undecided by design.** Two arcs are live and are being tested against each other:
+**Decided 2026-10-10: the managed home lab leads.**
 
-- `/` — **the assistant**: an assistant that lives in your house and can actually do things because a
-  machine you own sits behind it.
-- `/homelab` — **the managed home lab**: a home server that installs, updates and backs up the
-  services you ask for.
+- `/` — **the managed home lab**: a home server that installs, updates and backs up the services you
+  ask for. This is the lead.
+- `/assistant` — **the assistant**: an assistant that lives in your house and can actually do things
+  because a machine you own sits behind it. Kept and indexable, so it can be linked or advertised
+  separately, but it is not the front door.
+- `/homelab` — 301 to `/`. It was the test's variant URL and ads and emails still point at it.
 
-Both are true. The test decides which leads. Neither page may drift from the shared product truth.
+**How it was decided, because the two metrics disagreed.** The pre-registered primary metric was link
+CTR and the *assistant* arc won it outright (6.404% against 4.859%, z = −6.96). Signups per click went
+the other way: homelab 2.238% against assistant 0.859%, £4.75 per signup against £10.35. The owner
+chose the arc that produced buyers over the arc that produced clicks. The free-text answers agree —
+homelab signups described the product, assistant signups described a category.
+
+Both arcs remain true. Neither page may drift from the shared product truth.
 
 ## Operating Context
 

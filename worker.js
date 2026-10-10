@@ -92,10 +92,20 @@ async function renderBuy(request, env, ctx) {
   return html.transform(new Response(page.body, { status: page.status, headers }));
 }
 
+// /homelab was the positioning test's variant URL. It won, so its copy is now
+// the homepage; the old URL is kept alive because the ads, the emails and
+// anything anyone bookmarked still point at it.
+const GONE_TO_ROOT = new Set(['/homelab', '/homelab/']);
+
 export default {
   async fetch(request, env, ctx) {
-    const { pathname } = new URL(request.url);
-    if (pathname === '/buy') {
+    const url = new URL(request.url);
+    if (GONE_TO_ROOT.has(url.pathname)) {
+      // 301: the move is permanent, and search engines should pass on whatever
+      // the old URL earned rather than keep indexing a page that no longer exists.
+      return Response.redirect(new URL('/' + url.search, url).toString(), 301);
+    }
+    if (url.pathname === '/buy') {
       return renderBuy(request, env, ctx);
     }
     return env.ASSETS.fetch(request);

@@ -74,7 +74,7 @@ animates, so no-JS and reduced-motion visitors see everything.
 
 ```
 npx wrangler dev --port 8788
-"<impeccable>/scripts/impeccable" detect --json index.html homelab.html setup.html privacy.html terms.html
+"<impeccable>/scripts/impeccable" detect --json index.html assistant.html buy.html setup.html privacy.html terms.html
 ```
 
 Clean means zero findings except `cream-palette`, which is the brand and is a known false positive.

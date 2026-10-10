@@ -21,7 +21,7 @@ cd "$(dirname "$0")"
 # ads/, .claude/) is repo furniture and must not reach the public bucket.
 FILES=(
   index.html
-  homelab.html
+  assistant.html
   privacy.html
   setup.html
   terms.html
